@@ -70,14 +70,14 @@ def main():
 def get_sentences_from_tex():
 
     # Find all the .tex files in the temp folder.
-    tex_files = glob.glob(f"*.tex")
+    tex_files = glob.glob(f"main.tex")
 
     # Find all the tex files whose content start with the string \documentclass.
     documentclass_files = []
-    for tex_file in tex_files:
-        with open(tex_file, "r") as f:
-            if f.readline().startswith("\documentclass"):
-                documentclass_files.append(tex_file)
+    #for tex_file in tex_files:
+    #    with open(tex_file, "r") as f:
+    #        if f.readline().startswith("\documentclass"):
+    documentclass_files.append(tex_file[0])
     assert len(documentclass_files) == 1, "There should be only one documentclass file."
     documentclass_file = documentclass_files[0]
 
